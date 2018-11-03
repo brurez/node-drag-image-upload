@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<link rel="stylesheet" href="stylesheets/style.css" />
+<script src="javascripts/main.js"></script>
+<h2>Use one of these input fields for selecting files...</h2>
+Beware, the directory choser works only in Chrome and may overload your browser memory if there are too many big images
+in the directory you choose.<p>
+  Choose multiple files :<input type="file" id="files" multiple onchange="handleFileSelect(event)"/>
+</p>
+<p>... or choose a directory (Chrome only, recursive! Will include images in subdirs): <input type="file" id="dir"
+                                                                                              webkitdirectory
+                                                                                              onchange="handleFileSelect(event)"/>
+</p>
+
+<h2>... or drop your files here!</h2>
+<div id="droppableZone" ondragenter="dragEnterHandler(event)" ondrop="dropHandler(event)"
+     ondragover="dragOverHandler(event)" ondragleave="dragLeaveHandler(event)">
+  Drop zone
+  <ol id="droppedFiles"></ol>
+</div>
+<button id="upload" onclick="handleUploadClick(event)">Upload</button>
+<progress id="prog"></progress>
+<h3>Saved on server:</h3>
+<div id="saved"></div>
+<br/>
+<output id="list"></output>
+<body>
+<html>
